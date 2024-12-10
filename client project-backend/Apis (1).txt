@@ -1,0 +1,878 @@
+Front end service list api - 
+https://own5k.in/p/final.php
+
+check sms/otp Api- 
+https://fastsms.su/stubs/handler_api.php?api_key={api_key}&action=getOtp&sms={sms_text}
+
+demo url- https://fastsms.su/stubs/handler_api.php?api_key=d91be54bb695297dd517edfdf7da5add&action=getOtp&sms=Dear user, your OTP is 383840. The request originated from IP
+responce - ["ot","383840"]
+
+service list get api- https://fastsms.su/stubs/handler_api.php?api_key=d91be54bb695297dd517edfdf7da5add&action=getServices
+apko uper jo responce mila hai otp check ka apko usme code milega service ka us code ko apko is service list me find krna hai jisee apko us service ka full name mil jayega jaise ot ka pura naam any other hai
+
+user ko aao show kroge check otp/sms page pr aise 
+Server Number      Service Name 
+   1.                    Any other 
+   
+After user account verification trx address generator Api - https://own5k.in/tron/?type=address
+
+trx transaction check api - https://own5k.in/tron/?type=txnid&address=TFJtHT3J8MYxoX1Z48Ua7KkxZXuowTptwQ&hash=9cda84de31613673bb7819d5877be32dae7f8be1a79ce134cea54e8a27b80732 
+
+
+trx sender api=  https://own5k.in/tron/?type=send&from=TWFbdsxLkM462hWvzR4zWo8c681kSrjxTm&key=C4CEFCDC47B7E6BBBF1C52F280B614EFB475771B4929DA2C08242EB5AC90110A&to=TLSmP7GgeqjkUhhHwoNtdPBVdBMYYVcCsm
+
+On recharge page of trx exchange rate api - 
+https://own5k.in/p/trxprice.php
+
+
+upi recharge api - 
+https://own5k.in/p/u.php?txn=978338161805
+
+response - 
+{"upi":"8279421202@yespop","txnid":"424806344151","amount":50,"time":"04 Sep ’24, 01:52 am"} 
+
+when transaction not found response - 
+{"error":"400"}
+
+other possible response 
+{"error":"UTR must be 12 digits"}
+
+
+
+
+--------------------------------------------
+1.
+Fastsms api
+Balance get - https://fastsms.su/stubs/handler_api.php?api_key=d91be54bb695297dd517edfdf7da5add&action=getBalance
+
+Response - ACCESS_BALANCE:1050.678731936
+
+
+Number get api - 
+https://fastsms.su/stubs/handler_api.php?api_key=d91be54bb695297dd517edfdf7da5add&action=getNumber&service=omg&country=22
+
+Response - ACCESS_NUMBER:172699615450824:917219682724
+ 
+Other possible response - NO_NUMBERS, NO_BALANCE
+
+Otp get api - https://fastsms.su/stubs/handler_api.php?api_key=d91be54bb695297dd517edfdf7da5add&action=getStatus&id=172699615450824
+
+Response - 
+STATUS_WAIT_CODE - Waiting for SMS
+STATUS_CANCEL - number canceled
+STATUS_OK:358880 - otp response 
+
+
+Next otp api - https://fastsms.su/stubs/handler_api.php?api_key=d91be54bb695297dd517edfdf7da5add&action=setStatus&id=172699655824868&status=3
+
+Response - ACCESS_WAITING - access done 
+
+
+Number cancel api - https://fastsms.su/stubs/handler_api.php?api_key=d91be54bb695297dd517edfdf7da5add&action=setStatus&id=172699655824868&status=8
+
+Response - STATUS_CANCEL - number canceled
+If after getting otp still api call then this responce will come - ACCESS_APPROVED
+
+agr number cancel krne ke baad fir se number cancel api run hoti hai to responce - ACCESS_CANCEL_ALREADY
+
+--------------------------------------------
+2.
+
+5sim Api 
+balance get 
+$token=eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTU4NjQ1MDYsImlhdCI6MTcyNDMyODUwNiwicmF5IjoiOWMyYTg1NmM4ZjQ2YmNlZWFmZThjOWI4OTE1MTM4NWQiLCJzdWIiOjI2ODY5Nzl9.1EZHone0nsBX6gGlK6vS3sOPXj72-JYPyqLxPmd0F0OU4x5EbMwlUqVD7spF56Q2V_Xh1Db1H3wbgvlF2NmrSrJN-_Mp6D8yTmCWq7bCwm9aH6GmHVKnI1TtoK6b02dg5yNdmrnkuxnUbeSM7a9pBOMynZQJMbegF_0XPf0zLt0s62lhmrLKMGdmpmh4LH6fN5umwVcRte-Up1rg4jz_oWY1DxZAI1Q5z_zKsIb01XWuoPNWZwe5bOE8RgzQ-1n0Cxm8xc48cp-P15vvUPxJk1j3E_8skJgNnN0QJQ4UDZlwIiaj5MF5By7Pge9mCwEHbUPsHR7NAsIGeNMc74he8Q
+
+curl "https://5sim.net/v1/user/profile" \
+  -H "Authorization: Bearer $token" \
+  -H "Accept: application/json"
+
+
+Response - 
+{"id":2686979,"email":"paidsms2024@gmail.com","balance":1247.67,"rating":96,"default_country":{"name":"russia","iso":"ru","prefix":"+7"},"default_operator":{"name":""},"frozen_balance":0,"last_top_orders":"{india:meesho:virtual21:10109:3.00,india:irctc:virtual21:73:9.33,india:google:virtual21:0:5.00,india:zupee:virtual21:13922:6.00,india:rummyyes:virtual21:11931:7.00}","last_top_idx":5,"last_order":"india:zupee:virtual21:13922:6.00","total_active_orders":0,"did_order":true}
+
+apko balance decode krna hai bas 
+
+Nunmber get 
+
+curl "https://5sim.net/v1/user/buy/activation/india/any/1mg" \
+  -H "Authorization: Bearer $token" \
+  -H "Accept: application/json"
+  
+ Response - {"id":654638160,"phone":"+916002834736","operator":"virtual21","product":"1mg","price":4,"status":"RECEIVED","expires":"2024-09-22T10:13:47.665416886Z","sms":null,"created_at":"2024-09-22T09:53:47.665416886Z","country":"india"}
+ apko id and number decode krna hai 
+ other possible response - 
+ no free phones - no number no stock
+ not enough user balance - no balance 
+ 
+ 
+ Otp get 
+ curl "https://5sim.net/v1/user/check/$id" \
+  -H "Authorization: Bearer $token" \
+  -H "Accept: application/json"
+  
+Response - 
+agr otp ni aaya tb jab ka responce 
+{"id":654641502,"phone":"+916395418776","operator":"virtual21","product":"1mg","price":4,"status":"RECEIVED","expires":"2024-09-22T10:21:34.16083Z","sms":[],"created_at":"2024-09-22T10:01:34.16083Z","country":"india"}
+
+single otp aane ke baad ka responce 
+{"id":654638160,"phone":"+916002834736","operator":"virtual21","product":"1mg","price":4,"status":"RECEIVED","expires":"2024-09-22T10:13:47.665417Z","sms":[{"created_at":"2024-09-22T09:59:06.168022Z","date":"2024-09-22T09:59:06.162684Z","sender":"AX-iONEMG","text":"Your TATA 1mg OTP is 694355. Stay safe and healthy :) Message ID: QVRZBd2yGDH","code":"694355"}],"created_at":"2024-09-22T09:53:47.665417Z","country":"india"}
+isme apko bas text get krna hai.
+
+mutltiple otp ka responce -
+{"id":654641502,"phone":"+916395418776","operator":"virtual21","product":"1mg","price":4,"status":"RECEIVED","expires":"2024-09-22T10:21:34.16083Z","sms":[{"created_at":"2024-09-22T10:04:43.370943Z","date":"2024-09-22T10:04:43.366454Z","sender":"AD-iONEMG","text":"Your TATA 1mg OTP is 500725. Stay safe and healthy :) Message ID: QVRZBd2yGDH","code":"500725"},{"created_at":"2024-09-22T10:05:02.068049Z","date":"2024-09-22T10:05:02.06108Z","sender":"AD-iONEMG","text":"Your TATA 1mg OTP is 580444. Stay safe and healthy :) Message ID: QVRZBd2yGDH","code":"580444"},{"created_at":"2024-09-22T10:06:17.835271Z","date":"2024-09-22T10:06:17.831726Z","sender":"AX-iONEMG","text":"Your TATA 1mg OTP is 384026. Stay safe and healthy :) Message ID: QVRZBd2yGDH","code":"384026"}],"created_at":"2024-09-22T10:01:34.16083Z","country":"india"}
+
+Number cancel - 
+curl "https://5sim.net/v1/user/cancel/$id" \
+  -H "Authorization: Bearer $token" \
+  -H "Accept: application/json"
+  
+Responce-
+{"id":654643879,"phone":"+918595125025","operator":"virtual21","product":"1mg","price":4,"status":"CANCELED","expires":"2024-09-22T10:28:36.651961Z","sms":[],"created_at":"2024-09-22T10:08:36.651961Z","country":"india"}
+apko bas status get krna h json 
+
+agr otp aane k baad koi cancel api ko run karega to response aayega - order has sms
+
+agr koi number cancel hone ke baad fir se cancel krta h to responce - order not found
+--------------------------------------------
+3.
+
+SMSHUB API 
+api key - 187351Ucca41bb308f7b88a7c6f390a27f8ce6c
+Balcance get - 
+https://smshub.org/stubs/handler_api.php?api_key=187351Ucca41bb308f7b88a7c6f390a27f8ce6c&action=getBalance 
+
+Response - ACCESS_BALANCE:0.3907 
+isme balance ko get krna hai hai
+
+Number get api - 
+https://smshub.org/stubs/handler_api.php?api_key=187351Ucca41bb308f7b88a7c6f390a27f8ce6c&action=getNumber&service=bby&operator=any&country=22
+
+Rewsponse - 
+ACCESS_NUMBER:703961611:919424865236
+1st id hai then number 
+
+other possible response - 
+NO_NUMBERS, NO_BALANCE
+
+
+Otp get api - 
+https://smshub.org/stubs/handler_api.php?api_key=187351Ucca41bb308f7b88a7c6f390a27f8ce6c&action=getStatus&id=703961611 
+
+Resoponse - 
+STATUS_WAIT_CODE - Waiting for SMS
+STATUS_CANCEL - number canceled
+STATUS_OK:358880 - otp response 
+
+
+Next Otp api - 
+https://smshub.org/stubs/handler_api.php?api_key=187351Ucca41bb308f7b88a7c6f390a27f8ce6c&action=setStatus&status=3&id=703961611 
+
+Resoponse - 
+ACCESS_RETRY_GET - Next otp ke liye request done
+
+
+
+Nmumber Cancel api - 
+https://smshub.org/stubs/handler_api.php?api_key=187351Ucca41bb308f7b88a7c6f390a27f8ce6c&action=setStatus&status=8&id=703961611 
+
+
+Response - 
+ACCESS_CANCEL - Number Cancelled 
+
+agr koi user number cancel ke baad fir se api ko run krta hai to responce - ALREADY_CANCELED 
+agr koi user otp aane k baad api run karta hai to responce - ACCESS_ACTIVATION
+--------------------------------------------
+4.
+TIGERSMS API 
+
+balance get - 
+https://api.tiger-sms.com/stubs/handler_api.php?api_key=aHy99pGILr2nqgamVsqHZBLwjaTRHPua&action=getBalance 
+
+Response -
+ACCESS_BALANCE:381.50 
+
+apapko balance get krna hai 
+
+
+Number Get -
+https://api.tiger-sms.com/stubs/handler_api.php?api_key=aHy99pGILr2nqgamVsqHZBLwjaTRHPua&action=getNumber&service=hp&country=22
+
+Response - 
+ACCESS_NUMBER:999999000994390963:917815844789 
+
+apko id and number get krna hai 
+Other possible response - NO_NUMBERS, NO_BALANCE
+
+Otp get - 
+https://api.tiger-sms.com/stubs/handler_api.php?api_key=aHy99pGILr2nqgamVsqHZBLwjaTRHPua&action=getStatus&id=999999000994390963 
+
+Response - 
+STATUS_WAIT_CODE - Waiting for SMS
+ACCESS_CANCEL - activation canceled
+STATUS_OK:737713 - code received 
+
+
+
+Number Cancel - 
+https://api.tiger-sms.com/stubs/handler_api.php?api_key=aHy99pGILr2nqgamVsqHZBLwjaTRHPua&action=setStatus&status=8&id=999999000994390963 
+
+Response - 
+ACCESS_CANCEL 
+
+agr 2 mint se pehle number cancel kroge to responce - EARLY_CANCEL_DENIED
+agr number cancell ke bad fir api call kre to responce -ACCESS_CANCEL
+
+otp aane ke baad number cancel api run ko to responce aayega - BAD_STATUS
+
+-------------------------------------------- 
+5.
+GRIZZLYSMS API 
+
+balance Get  - 
+https://api.grizzlysms.com/stubs/handler_api.php?api_key=0bbe5066f4b8345c1c74bcbb1d97985f&action=getBalance 
+
+Response - 
+ACCESS_BALANCE:682.70 
+
+Nunmber get 
+https://api.grizzlysms.com/stubs/handler_api.php?api_key=0bbe5066f4b8345c1c74bcbb1d97985f&action=getNumber&service=hp&country=22 
+
+Responce - 
+ACCESS_NUMBER:143297846:918081473436
+
+othher possible response  - 
+NO_NUMBERS, NO_BALANCE
+
+Otp get - 
+https://api.grizzlysms.com/stubs/handler_api.php?api_key=0bbe5066f4b8345c1c74bcbb1d97985f&action=getStatus&id=143297846
+
+Response - 
+STATUS_WAIT_CODE — waiting for sms 
+STATUS_CANCEL — activation canceled 
+STATUS_OK:449536 - otp code 
+STATUS_WAIT_RESEND - waiting for new otp 
+
+
+Next otp - 
+https://api.grizzlysms.com/stubs/handler_api.php?api_key=0bbe5066f4b8345c1c74bcbb1d97985f&action=setStatus&status=3&id=143308304 
+
+Responce - 
+ACCESS_RETRY_GET - access done 
+
+
+Number Cancel - 
+https://api.grizzlysms.com/stubs/handler_api.php?api_key=0bbe5066f4b8345c1c74bcbb1d97985f&action=setStatus&status=8&id=143297846 
+
+Response - 
+ACCESS_CANCEL — number canceled 
+agr koi number cancel karke again cancel kre to responce - BAD_ACTION 
+otp aane k baad number cancel krega to responce - BAD_ACTION
+-------------------------------------------- 
+6.
+
+TEMPNUMBER API 
+
+balance get - 
+https://tempnum.org/stubs/handler_api.php?api_key=c66ea248c3beaf2e4a3d9e96a41fb37e&action=getBalance 
+Response - 
+ACCESS_BALANCE:932.05 
+
+
+number get - 
+https://tempnum.org/stubs/handler_api.php?api_key=c66ea248c3beaf2e4a3d9e96a41fb37e&action=getNumber&service=hp&country=22 
+Response - 
+ACCESS_NUMBER:2563785226:919336362941
+
+othrer possible response 
+NO_NUMBERS, NO_BALANCE 
+
+otp get - 
+https://tempnum.org/stubs/handler_api.php?api_key=c66ea248c3beaf2e4a3d9e96a41fb37e&action=getStatus&id=2563785226 
+
+Response - 
+STATUS_WAIT_CODE — waiting for sms 
+STATUS_CANCEL — activation canceled 
+STATUS_OK:your otp for meesho login is 389196 and is valid for 5 mins. please do not share this otp with anyone to keep your account safe. obcom6bxknc meesho - otp code 
+
+
+
+
+
+number cancel - 
+https://tempnum.org/stubs/handler_api.php?api_key=c66ea248c3beaf2e4a3d9e96a41fb37e&action=setStatus&status=8&id=2563785226 
+
+Response - 
+ACCESS_CANCEL — number canceled 
+agr koi number cancel karke again cancel kre to responce - NO_ACTIVATION
+otp aane k baad number cancel krega to responce - NO_ACTIVATION 
+-------------------------------------------- 
+7.
+SMSBOWER API 
+balance get - 
+https://smsbower.online/stubs/handler_api.php?api_key=qyeyL8nggrQohcefuaIWiWuRztWyK5r0&action=getBalance 
+
+Response - 
+ACCESS_BALANCE:245.77 
+
+Number get  - 
+https://smsbower.online/stubs/handler_api.php?api_key=qyeyL8nggrQohcefuaIWiWuRztWyK5r0&action=getNumber&service=hp&country=22 
+
+Response- 
+ACCESS_NUMBER:275053106:917505212811 
+
+other possible response 
+NO_NUMBERS, NO_BALANCE
+
+
+
+otp get- 
+https://smsbower.online/stubs/handler_api.php?api_key=qyeyL8nggrQohcefuaIWiWuRztWyK5r0&action=getStatus&id=275053106
+
+Response - 
+STATUS_WAIT_CODE — waiting for sms 
+STATUS_CANCEL — activation canceled 
+STATUS_OK:109586 - otp code 
+STATUS_WAIT_RETRY:109586 - waiting for new sms
+
+
+next otp - 
+https://smsbower.online/stubs/handler_api.php?api_key=qyeyL8nggrQohcefuaIWiWuRztWyK5r0&action=setStatus&status=3&id=275064840
+response - ACCESS_RETRY_GET
+
+
+
+Number cancel- 
+https://smsbower.online/stubs/handler_api.php?api_key=qyeyL8nggrQohcefuaIWiWuRztWyK5r0&action=setStatus&status=8&id=275053106 
+
+Response- 
+ACCESS_CANCEL - number cancelled 
+ agr user number cancel karke again run krta h to same response aayegaa 
+ otp aane k baad number cancel api run hogi to response- BAD_STATUS 
+-------------------------------------------- 
+8.
+SMS-ACTIVATE.IO/EN API 
+balance get - 
+https://api.sms-activate.io/stubs/handler_api.php?api_key=7b4252022A08d40A84fA6dc153781f4f&action=getBalance
+Response - 
+ACCESS_BALANCE:1669.53 
+
+number get- 
+https://api.sms-activate.io/stubs/handler_api.php?api_key=7b4252022A08d40A84fA6dc153781f4f&action=getNumber&service=hp&operator=any&country=22
+
+Response - 
+ACCESS_NUMBER:2825225358:918824192003 
+
+other possible response - 
+NO_BALANCE, NO_NUMBERS 
+
+
+otp get - 
+https://api.sms-activate.io/stubs/handler_api.php?api_key=7b4252022A08d40A84fA6dc153781f4f&action=getStatus&id=2825225358
+
+Response - 
+STATUS_WAIT_CODE - waiting for SMS 
+STATUS_CANCEL - number cancelled 
+STATUS_OK:641901 - otp 
+STATUS_WAIT_RETRY:641901 - waiting for new otp
+
+
+next otp - 
+https://api.sms-activate.io/stubs/handler_api.php?api_key=7b4252022A08d40A84fA6dc153781f4f&action=setStatus&status=3&id=2825225358
+response - 
+ACCESS_RETRY_GET - access done
+
+
+Number cancel - 
+https://api.sms-activate.io/stubs/handler_api.php?api_key=7b4252022A08d40A84fA6dc153781f4f&action=setStatus&status=8&id=2825225358 
+response - 
+ACCESS_CANCEL - number cancelled 
+
+agr koi number cancelled ke baad bhi api run krta hai to responce - BAD_STATUS 
+
+aur koi otp aane ke baad bhi number cancel api run krta hai to responce - BAD_STATUS
+-------------------------------------------- 
+9.
+CCPAY API 
+
+balance get - 
+https://own5k.in/p/ccpay.php?type=balance
+
+response - 
+34 
+price in $
+Token get - http://www.phantomunion.com:10023/pickCode-api/push/ticket?key=d1967b3a7609f20d010907ed41af1596 
+
+response - 
+{"code":"200","message":"Success","data":{"token":"0fb5f5c04d7fca3f3b505bf9bc3b6150_2883"}} 
+
+Number get - 
+http://www.phantomunion.com:10023/pickCode-api/push/buyCandy?token=0fb5f5c04d7fca3f3b505bf9bc3b6150_2883&businessCode=10643&quantity=1&country=IN&effectiveTime=10 
+
+
+response - 
+{"code":"200","message":"Success","data":{"phoneNumber":[{"number":"+918926598016","businessCode":"10643","serialNumber":"1837905424373538816","imsi":"405518011542720","country":"IN","areaCode":"91"}],"balance":"34.55"}}
+
+apko serial number and number get krna 
+other possible response 
+{"code":"221","message":"Mobile phone number is initializing, please try again later","data":{}} 
+
+The current business is busy, no mobile number is available, please try again later
+
+
+
+otp get - 
+http://www.phantomunion.com:10023/pickCode-api/push/sweetWrapper?token=0fb5f5c04d7fca3f3b505bf9bc3b6150_2883&serialNumber=1837907370740174848 
+
+response - 
+without otp - 
+{"code":"200","message":"Success","data":{"verificationCode":[{"serialNumber":"1837907776723771392","vc":"","businessCode":"10643"}]}}
+with otp - 
+{"code":"200","message":"Success","data":{"verificationCode":[{"serialNumber":"1837907370740174848","vc":"Your OTP for Meesho login is 482547 and is valid for 5 mins. Please DO NOT share this OTP with anyone to keep your account safe. oBcOM6bXKNc Meesho\u0000\u0000\u0000\u0000\u0000","businessCode":"10643"}]}}
+
+
+number cancel - 
+https://own5k.in/p/ccpay.php?type=cancel&number=8798825870
+
+response - 
+success 
+--------------------------------------------
+10.
+SMS-ACTIVATION-SERVICE.COM
+ singles sms
+ 2 mint wait before number cancel 
+
+balance get - 
+https://sms-activation-service.com/stubs/handler_api?api_key=cbfa000d81dbfbc4e2d4ba3484fa5a5a&action=getBalance 
+
+response - 5.12 
+price in $ 
+
+
+number get - 
+https://sms-activation-service.com/stubs/handler_api?api_key=cbfa000d81dbfbc4e2d4ba3484fa5a5a&action=getNumber&service=hp&operator=any&country=22 
+
+response - 
+ACCESS_NUMBER:14696852:917709772308 
+other possible response 
+NO_NUMBERS, NO_BALANCE 
+
+
+otp get - 
+https://sms-activation-service.com/stubs/handler_api?api_key=cbfa000d81dbfbc4e2d4ba3484fa5a5a&action=getStatus&id=14696852 
+
+response - 
+STATUS_WAIT_CODE - waiting for otp 
+STATUS_CANCEL - number cancelled 
+STATUS_OK:574747 - otp 
+
+
+
+number cancel - 
+https://sms-activation-service.com/stubs/handler_api?api_key=cbfa000d81dbfbc4e2d4ba3484fa5a5a&action=setStatus&id=14696852&status=8 
+
+number cancel 2 mint
+
+response - 
+ACCESS_CANCEL - number cancelled 
+age number cancel k baad Api call hui to responce - BAD_STATUS 
+otp aane ke baad api call hui to responce - BAD_STATUS 
+-------------------------------------------- 
+
+11. 
+token/api key - kdB2QOTDWF6hwgywghVwQGvKNALFoZnU
+SMS-Man
+
+ek baat yaad rakhna agr selected service single otp ki hai number get url ke last me 
+hasMultipleSms=false hoga
+
+agr selected number multiple otp ka hai url ke last me 
+hasMultipleSms=true hoga 
+to agr selected service multiple otp wali hai to hi next otp Api call hogi 
+
+balance get - https://api.sms-man.com/control/get-balance?token=kdB2QOTDWF6hwgywghVwQGvKNALFoZnU
+
+resoponce - {"balance":"1378.34","hold":0,"channels":10}
+other response when apikey wrong- {"success":false,"error_code":"wrong_token","error_msg":"Wrong token!"}
+
+
+number get - 
+for single otp service 
+https://api.sms-man.com/control/get-number?token=kdB2QOTDWF6hwgywghVwQGvKNALFoZnU&application_id=1491&country_id=14&hasMultipleSms=false 
+ 
+for multiple otp service - 
+https://api.sms-man.com/control/get-number?token=kdB2QOTDWF6hwgywghVwQGvKNALFoZnU&application_id=1491&country_id=14&hasMultipleSms=true
+
+response- {"request_id":588947233,"application_id":1491,"country_id":14,"number":"919125831873"}
+
+isme apko requestid and number get krna hai
+
+other possible responce - 
+agr Balance low hai to - {"application_id":1491,"country_id":14,"error_code":"balance","error_msg":"Need more funds, please charge your balance"} 
+
+agr api key wrong hoto - 
+{"success":false,"error_code":"wrong_token","error_msg":"Wrong token!"}
+
+agr stock/no number available - 
+{"application_id":1527,"country_id":14,"error_code":"no_channels","error_msg":"The channel limit has been reached. Reject the numbers while waiting for an SMS or contact support"}
+
+apiko error_code ko get krna hai 
+otp get - https://api.sms-man.com/control/get-sms?token=kdB2QOTDWF6hwgywghVwQGvKNALFoZnU&request_id=588948658
+
+response- 
+waiting for otp - {"request_id":"588948658","application_id":1491,"country_id":14,"number":"919233201285","error_code":"wait_sms","error_msg":"Still waiting..."}
+
+when otp come - 
+{"request_id":588949249,"application_id":1491,"country_id":14,"number":"918310833739","sms_code":"702759"}
+apko sms_code ko get krna hai hai 
+
+
+agr number cancel hai to - 
+{"request_id":"588950653","application_id":1491,"country_id":14,"number":"919084552671","error_code":"wrong_status","error_msg":"Current request already closed."}
+apko erro_msg ko get krna hai
+
+next otp - 
+https://api2.sms-man.com/control/set-status?token=kdB2QOTDWF6hwgywghVwQGvKNALFoZnU&request_id=588949703&status=retrysms
+
+resoponce - 
+{"request_id":588949703,"success":true} 
+isme apko success ko get krna hai
+
+number cancel - 
+https://api2.sms-man.com/control/set-status?token=kdB2QOTDWF6hwgywghVwQGvKNALFoZnU&request_id=588951382&status=reject 
+
+rewsponce - 
+{"request_id":588949703,"success":true} 
+isme apko success ko get krna hai
+
+agr otp aane ke baad bhi number cancel api run hoti hai to responce - 
+{"request_id":588952454,"error_code":"change_status","error_msg":"Please read api documentation!"} 
+
+apko error_msg ko get krna hai.
+--------------------------------------------
+
+
+IP ADDRESS AND DETAILS GET API 
+api - 
+https://own5k.in/p/ip.php 
+response - 
+City: Cheyenne
+State: Wyoming
+Pincode: 82001
+Country: United States
+Internet Provider: Hurricane Electric LLC
+IP: 65.49.2.91
+
+--------------------------------------------
+TELEGRAM API 
+
+number get api - 
+https://api.telegram.org/bot7032433639:AAE-e5xmzloLnYmXpyg7k-WdxdL_qKRY9b4/sendMessage?chat_id=6769991787&text=Hey 
+
+response - 
+{"ok":true,"result":{"message_id":231,"from":{"id":6740130325,"is_bot":true,"first_name":"Recharge Notification","username":"paidsms_rcbot"},"chat":{"id":6769991787,"first_name":"Paid","last_name":"Sms","username":"paidsms_support","type":"private"},"date":1727074963,"text":"Hey"}}
+
+isme apko ok true wala get krna hai jisee responce ka pta rhe sahi request hui ya ni
+
+isme apko text=Hey jo hai "Hey" yeh wala data replace krna hai  
+
+jo data send krna hai wo hai 
+
+Number Get
+
+Date => 04-09-2024 06:16:35am
+
+User Email => mynameisdarr@gmail.com
+
+Service Name => any other
+
+Service Code => ot
+
+Price => 5.88₹
+
+Server => 1
+
+Number => 8930344050
+
+Balance => 32.36₹
+
+IP Details => 
+City: Jamnagar
+State: Gujarat
+Pincode: 361006
+Country: India
+Service Provider: Gtpl Surat Telelink PVT LTD
+IP: 150.129.166.205
+
+--------------------------------------------
+
+otp get api - 
+https://api.telegram.org/bot7032433639:AAE-e5xmzloLnYmXpyg7k-WdxdL_qKRY9b4/sendMessage?chat_id=6769991787&text=Hey 
+
+same api rhegi bas content change hoga  
+
+jo data send krna hai wo hai 
+
+Otp Get
+
+Date => 04-09-2024 12:17:03am
+
+User Email => ajoy01850@gmail.com
+
+Service Name => any other
+
+Price => 7.42₹
+
+Server => 3
+
+Number => 7891486995
+
+Otp => Dear User, 801217 is your verification OTP(One Time Password) to log in to the Bakery Binge Delivery Partner application.
+
+IP Details => 
+City: Kolkata
+State: West Bengal
+Pincode: 700030
+Country: India
+Service Provider: Bharti Airtel Ltd
+IP: 2401:4900:3a02:faa0:bc2b:b3ff:fe74:c6f1 
+
+-------------------------------------------- 
+number cancel api 
+https://api.telegram.org/bot7032433639:AAE-e5xmzloLnYmXpyg7k-WdxdL_qKRY9b4/sendMessage?chat_id=6769991787&text=Hey 
+
+same api only content change 
+
+data jo swend krna hai 
+
+Number Cancel
+
+Date => 04-09-2024 05:31:09am
+
+User Email => keertilidhi9058@gmail.com
+
+Service Name => any other
+
+Price => 5.88₹
+
+Server => 1
+
+Number => 9764432355
+
+Balance => 36.45₹
+
+Status => Number Cancelled
+
+IP Details => 
+City: Delhi
+State: National Capital Territory of Delhi
+Pincode: 110001
+Country: India
+Service Provider: Bharti Airtel Ltd
+IP: 2401:4900:47d4:1569:74a5:85a7:146f:42b2 
+
+-------------------------------------------- 
+RECHARGE BOT API 
+
+rc bot api - 
+https://api.telegram.org/bot6740130325:AAEp1cTpT2o6qgIR4Mb3T2j4s6VDjSVV5Jo/sendMessage?chat_id=6769991787&text=Hey
+
+response - 
+{"ok":true,"result":{"message_id":231,"from":{"id":6740130325,"is_bot":true,"first_name":"Recharge Notification","username":"paidsms_rcbot"},"chat":{"id":6769991787,"first_name":"Paid","last_name":"Sms","username":"paidsms_support","type":"private"},"date":1727074963,"text":"Hey"}}
+
+isme apko ok true wala get krna hai jisee responce ka pta rhe sahi request hui ya ni 
+
+
+isme apko text=Hey jo hai "Hey" yeh wala data replace krna hai  
+
+jo data send krna hai wo hai 
+
+agr upi se recharge hui h to 
+
+Upi Recharge
+
+Date => 04-09-2024 01:52:44am
+
+User Email => paldixit6@gmail.com
+
+Amount  => 50₹
+
+Updated Balance  => 51.42₹
+
+IP Details => 
+City: Meerut
+State: Uttar Pradesh
+Pincode: 250001
+Country: India
+Service Provider: Reliance Jio Infocomm Limited
+IP: 2409:40d2:100e:a71f:ba07:38c6:ec6a:3821
+
+Txn Id => 424806344151 
+
+
+agr trx se recharge hua hai to
+
+
+Trx Recharge
+
+Date => 02-09-2024 02:12:41pm
+
+User Email => paidsms2024@gmail.com
+
+Trx => 2.000000
+
+Trx Exchange Rate => 13.04
+
+Total Amount in Inr  => 26.08₹
+
+Updated Balance  => 76.08₹
+
+User Trx address  => TK1Mcz6S6rRj5gpCj1V6bwFyYU8KDHmtsR
+
+Send To => TLSmP7GgeqjkUhhHwoNtdPBVdBMYYVcCsm
+
+IP Details => 
+City: Palwal
+State: Haryana
+Pincode: 121102
+Country: India
+Service Provider: N R DATA SERVICE PVT LTD
+IP: 103.65.195.111
+
+Txn/Hash Id => d161c9fac3c6c549fe2b0e023abc439ef86177babca13eb08283364fbf915925 
+
+
+
+agr admin panel se balance add hota hai to data jaayega 
+
+Recharge By Admin
+
+Date => 04-09-2024 01:52:44am
+
+User Email => paldixit6@gmail.com
+
+Amount  => 50₹
+
+Updated Balance  => 51.42₹
+
+IP Details => 
+City: Meerut
+State: Uttar Pradesh
+Pincode: 250001
+Country: India
+Service Provider: Reliance Jio Infocomm Limited
+IP: 2409:40d2:100e:a71f:ba07:38c6:ec6a:3821
+
+Txn Id => 424806344151/Admin
+
+
+aur agr koi bhi user bug se balance add krta hai q ki jb balance add hota h to database m b update hoga to bhi aap telegram ki is recharge wali api ko call kroge jisme yeh data bejna 
+
+Recharge By Unknown Source 
+
+Date => 04-09-2024 01:52:44am
+
+User Email => paldixit6@gmail.com
+
+Amount  => 50₹
+
+Updated Balance  => 51.42₹
+
+IP Details => 
+City: Meerut
+State: Uttar Pradesh
+Pincode: 250001
+Country: India
+Service Provider: Reliance Jio Infocomm Limited
+IP: 2409:40d2:100e:a71f:ba07:38c6:ec6a:3821
+
+Txn Id => if available 
+
+
+
+-------------------------------------------- 
+user block api 
+https://api.telegram.org/bot6868379504:AAEyCD-0YPsJBtNRhxWk1uSDBCh71H1c5Lg/sendMessage?chat_id=6769991787&text=Hey 
+
+response - 
+{"ok":true,"result":{"message_id":231,"from":{"id":6740130325,"is_bot":true,"first_name":"Recharge Notification","username":"paidsms_rcbot"},"chat":{"id":6769991787,"first_name":"Paid","last_name":"Sms","username":"paidsms_support","type":"private"},"date":1727074963,"text":"Hey"}}
+
+isme apko ok true wala get krna hai jisee responce ka pta rhe sahi request hui ya ni 
+
+
+isme apko text=Hey jo hai "Hey" yeh wala data replace krna hai  
+
+jo data send krna hai wo hai 
+
+User Block
+
+Date => 03-09-2024 08:18:36am
+
+User Email => kulouravikas@gmail.com
+
+Reason => Due to Fraud
+
+IP Details => 
+City: Palwal
+State: Haryana
+Pincode: 121102
+Country: India
+Service Provider: N R DATA SERVICE PVT LTD
+IP: 103.65.195.111 
+
+-------------------------------------------- 
+
+total selling bot api - 
+https://api.telegram.org/bot7311200292:AAF7NYfNP-DUcCRFevOKU4TYg4i-z2X8jtw/sendMessage?chat_id=6769991787&text=Hey 
+
+response - 
+{"ok":true,"result":{"message_id":231,"from":{"id":6740130325,"is_bot":true,"first_name":"Recharge Notification","username":"paidsms_rcbot"},"chat":{"id":6769991787,"first_name":"Paid","last_name":"Sms","username":"paidsms_support","type":"private"},"date":1727074963,"text":"Hey"}}
+
+isme apko ok true wala get krna hai jisee responce ka pta rhe sahi request hui ya ni 
+
+
+isme apko text=Hey jo hai "Hey" yeh wala data replace krna hai  
+
+jo data send krna hai wo hai  
+
+Date => 04-09-2024 06:00:02am
+
+Total Number Selling Update
+Total Sold       => 4
+Total Cancelled  => 12
+Total Pending    => 1
+
+Number Selling Update Via Servers
+Server 1 => 1
+Server 2 => 0
+Server 3 => 3
+Server 4 => 0
+Server 5 => 0
+Server 6 => 0
+Server 7 => 0
+Server 8 => 0
+Server 9 => 0
+Server 10 => 0
+Server 11 => 0
+
+
+Recharge Update
+Total => 50.00
+Trx   => 0.00
+Upi   => 50.00
+Admin Added => 0.00
+
+Servers Balance
+Fastsms => 220.17407062999p
+5Sim => 1247.67p
+Smshub => 0.3907$
+TigerSMS => 381.50p
+GrizzlySMS => 682.70p
+Tempnum => 3.052p
+Smsbower => 100p
+Sms-activate => 78p 
+Sms-activation-service => 77p
+CCPAY => 2.56$
+SMS-Man => 2756.68p
+
+Website Balance  => 4876.24
+Total User Count => 283

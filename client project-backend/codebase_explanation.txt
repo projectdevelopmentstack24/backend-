@@ -1,0 +1,291 @@
+Virtual Number Service Backend Documentation
+
+1. System Architecture
+---------------------
+The backend is built using Node.js with Express.js and MongoDB, following a modular architecture:
+
+Core Components:
+- Models: Database schemas and business logic
+- Controllers: Request handlers and API endpoints
+- Routes: API routing and versioning
+- Middlewares: Authentication and request processing
+- Utils: Provider integrations and shared utilities
+- Scripts: Admin and maintenance tools
+
+2. Security Features
+-------------------
+a) Authentication & Authorization
+   - JWT-based authentication
+   - API key validation
+   - Rate limiting
+   - Session management
+   - 2FA for admin access
+
+b) Input Validation
+   - Request payload validation
+   - Temporary email blocking
+   - Password complexity rules
+   - Phone number validation
+   - UPI/TRX address validation
+
+c) Rate Limiting
+   - Login attempts (5/15min)
+   - Registration (3/hour)
+   - OTP verification (3/5min)
+   - Recharge attempts (10/hour)
+   - API requests (30/min)
+
+d) Transaction Security
+   - MongoDB transactions
+   - Atomic operations
+   - Duplicate detection
+   - Rollback support
+   - Timeout handling
+
+3. API Endpoints
+---------------
+a) Authentication
+   ```
+   POST /auth/login
+   POST /auth/register
+   POST /auth/verify-email
+   POST /auth/change-password
+   POST /auth/check-otp
+   POST /auth/get-number
+   POST /auth/send-verification-email
+   ```
+
+b) Recharge
+   ```
+   POST /recharge/initiate
+   GET  /recharge/history
+   GET  /recharge/verify/:transactionId
+   GET  /recharge/status/:transactionId
+   ```
+
+c) User Profile
+   ```
+   GET  /user/profile
+   PUT  /user/profile
+   GET  /user/balance
+   ```
+
+d) Payment Methods
+   ```
+   POST /payment/upi
+   POST /payment/tron
+   GET  /payment/methods
+   POST /payment/verify-upi
+   ```
+
+e) System
+   ```
+   GET  /system/status
+   GET  /system/maintenance
+   GET  /system/config
+   ```
+
+4. Error Handling
+----------------
+a) Standard Error Format
+   ```javascript
+   {
+     success: false,
+     error: "Error message",
+     details: {} // Optional details
+   }
+   ```
+
+b) HTTP Status Codes
+   - 200: Success
+   - 400: Bad Request
+   - 401: Unauthorized
+   - 403: Forbidden
+   - 404: Not Found
+   - 429: Too Many Requests
+   - 500: Internal Error
+
+c) Error Categories
+   - Validation Errors
+   - Authentication Errors
+   - Transaction Errors
+   - Provider Errors
+   - System Errors
+
+5. Transaction Management
+------------------------
+a) Transaction Helper
+   - Atomic operations
+   - Session management
+   - Rollback support
+   - Duplicate detection
+   - Notification integration
+
+b) Transaction Types
+   - Recharge (UPI/TRX)
+   - Service Purchase
+   - Refund
+   - Admin Credit
+
+c) Transaction States
+   - Pending
+   - Completed
+   - Failed
+   - Refunded
+
+6. Service Management
+--------------------
+a) Service Helper
+   - Retry mechanism
+   - Provider integration
+   - Error handling
+   - Notification system
+   - Transaction support
+
+b) Service Operations
+   - Get number
+   - Check OTP
+   - Cancel number
+   - Extend time
+   - Get status
+
+7. Maintenance System
+--------------------
+a) Maintenance Types
+   - Master maintenance
+   - Server maintenance
+   - Auth maintenance
+   - Recharge maintenance
+   - Support maintenance
+
+b) Maintenance Features
+   - Scheduled maintenance
+   - Emergency maintenance
+   - Partial maintenance
+   - Service-specific maintenance
+
+8. Notification System
+---------------------
+a) Telegram Notifications
+   - User registration
+   - Recharge events
+   - Service events
+   - System events
+   - Error alerts
+
+b) Email Notifications
+   - Verification emails
+   - Password reset
+   - Transaction receipts
+   - System alerts
+
+9. Performance Optimization
+--------------------------
+a) Database
+   - Indexing
+   - Query optimization
+   - Connection pooling
+   - Caching strategy
+
+b) API
+   - Rate limiting
+   - Response compression
+   - Request validation
+   - Error handling
+
+10. Monitoring & Logging
+-----------------------
+a) System Monitoring
+   - Service status
+   - Server health
+   - API performance
+   - Error rates
+
+b) Transaction Monitoring
+   - Payment status
+   - Service usage
+   - User activity
+   - Balance changes
+
+11. Security Best Practices
+--------------------------
+a) Authentication
+   - JWT with expiration
+   - API key rotation
+   - Rate limiting
+   - IP tracking
+
+b) Data Protection
+   - Input sanitization
+   - Output encoding
+   - Sensitive data encryption
+   - Session management
+
+12. Development Guidelines
+-------------------------
+a) Code Style
+   - ESLint configuration
+   - Prettier formatting
+   - JSDoc comments
+   - Error handling
+
+b) Testing
+   - Unit tests
+   - Integration tests
+   - Load testing
+   - Security testing
+
+13. Deployment
+-------------
+a) Requirements
+   - Node.js 14+
+   - MongoDB 4.4+
+   - Redis (optional)
+   - SSL certificate
+
+b) Environment Variables
+   ```
+   # Server
+   PORT=3000
+   NODE_ENV=production
+   
+   # Database
+   MONGO_URI=mongodb://...
+   
+   # Security
+   JWT_SECRET=your-secret
+   API_KEY_SALT=your-salt
+   
+   # Services
+   MIN_RECHARGE_AMOUNT=50
+   MAX_RECHARGE_AMOUNT=10000
+   CANCEL_TIMEOUT=120000
+   ORDER_TIMEOUT=1200000
+   
+   # Notifications
+   TELEGRAM_BOT_TOKEN=your-token
+   TELEGRAM_CHAT_ID=your-chat-id
+   ```
+
+14. Troubleshooting
+------------------
+Common Issues:
+1. Transaction Failures
+   - Check transaction logs
+   - Verify provider status
+   - Check user balance
+   - Review error messages
+
+2. Service Issues
+   - Check provider API
+   - Verify server status
+   - Check maintenance mode
+   - Review service logs
+
+3. Payment Issues
+   - Verify payment gateway
+   - Check transaction status
+   - Review user balance
+   - Check error logs
+
+Note: Keep this documentation updated with system changes. 

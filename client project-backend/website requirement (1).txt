@@ -1,0 +1,574 @@
+++++++++Website Requirement++++++++++++
+
+apko figma design/file ji jayegi 70% chijen design ke hisab se honge aur usmein kuchh Jo changes hone hain vah maine niche mention kar diye Hain 
+
+
+
+meri website mein main 10 se 12 website use karunga website Ko main yahan per server ke naam se call karunga 
+1. Homepage 
+home page ke andar user jab bhi first time website ko open Karega to usko vahan per ek search box jisse vah service Jo rahegi vah usko search kar sake aur uske niche service ke list rahengi jo jo ham sell karenge ab main aapko yah Jo service list hai vah Kahan se milegi uske bare mein thoda sa Bata deta hun 
+ham jitni bhi website use karenge har website ke andar jo jo list rahegi UN sabko get karke ham UN sab Ko aapas mein compare karenge aur jis jis website mein jo jo service common rahegi ham unko uthakar ek list banaa denge example ke liye aap Amazon Naam ki service Laga Lo ab Amazon Naam ke service jis jis website mein available rahegi yani ki agar Amazon ke service 12 ke 12 server mein website mein available hai to ham usko ek Naam se list karenge theek hai  to kahane ka matlab yah hai ki jitni bhi website rahengi UN sab ka Naam utha ke Jo service list hai unko compare karenge aur jinmen jo common naam hai ham unko le lenge agar kisi bhi website ka naam kisi bhi website se match nahin hota hai yani ki vah Naam unique hai to ham usko aise  hi add kar denge 
+
+aur user jab bhi kisi service per click karega jaise user ne Amazon per click kiya to Amazon ke andar jitne bhi server Hain yani ki vah service jin-jin server per available hai to usko server ki list mil jayegi unke jo jo price rahenge vah us per dikhai dega
+
+
+aur jaisa maine bola ki agar user first time visit karta hai agar vah kisi bhi server ko select karta hai aur user login nahin hai to vah usko sign up ya login wale page per lekar chala jaega vah aapko uper depend karna hai ki aapko kya set karte ho
+
+
+jitne bhi Aap service list rahegi usko aapko scrolling mod mein lgana hai ki aapko ek slider dena hai jisko pakadkar user usko upar niche kar sake ek bar mein 
+
+
+Agr koi user service search kre aur wo service na ho to use any other krke ek service hai wo suggestion me aaye
+
+
+aap ko ek live chat support ka button bhi dena hai jisee user support se live baat kr ske
+
+here's is the url check it- https://own5k.in/p/final.php
+
+
+2.Login
+login page pa user ko 2 tarike ke option milenge ek to vah email se login Karega aur email ke andar koi bhi temporary email use nahin hogi only Gmail Yahoo Outlook Hotmail dusra option rahega Google se login aur user jab bhi login Karega email vagaira se to usko vahan per cloudflair ka captcha lagana hai security ke liye
+
+
+3. Signup 
+sign up page per bhi user 2 tarike se sign up kar sakta hai ek to email se aur user ke e-mail per verification link jayaga jise user verify karega without verify login karega user to use email verification krne ke liye bolo. and user Jaise hi apna email password confirm password ka option hoga and password and confirm password dono ko hide/visible krne ka icon lgana hai aur cloudflair captcha bhi hoga. aur agr email, password, confirm password koi bhi field empty hai ya cloudflair captcha verify ni hua to signup button disable rahega. aur user jab bhi account create Karega to usko ham yahan per ek TRX address Jo payment system rahega usko ek adress parmanent assign kar denge jis per vah apna recharge vagaira kar sakta hai jiski ham aage baat karenge. 
+here's is the url check - https://own5k.in/tron/?type=address
+is url ko run krne par apko address and privatekey ki milegi privatekey key aap database me save kroge iska aage use ayega
+aur user chahe login Karen ya sign up Karen jab tak uski Jo field vagaira hai password aur email ki to Jo apna login wala ya create account wala button rahega vah disable rahega
+
+
+4. Before Login Menu
+jab user first time website per aaega to Jo apna menu rahega mobile screen ke liye vah apna left hand side mein top per rahega to uske andar jo jo header yani ki option rahenge vah rahenge sabse pahle to rahega 
+home 
+login
+signup
+about
+
+
+
+5. After Login 
+jab user login kar lega to Jo apna menu bar rahega left side mein usmein jo jo header yani ki option rahenge unke naam hai yah 
+Home
+Recharge 
+History 
+Myorder
+Check sms
+Api 
+Contect support 
+Join channel 
+About
+
+
+aur apne right hand side mein upar ek profile ka icon rahega uske profile icon ke thode se left mein user ke wallet ka icon rahega jismein uska balance hoga 
+profile wale icon per click karne ke bad vahan per user ka jo email hai vah show Karega aur wah par change password ka option rahega  yah jo change password wala option hai yah sirf tabhi rahega jab user email se login Karega sign up Karega agar vah Google account se login sign up karta hai to change password ki koi jarurat nahin hai aur ek rahega log out ka option
+
+aur API ka jitna bhi kam hoga Sara Sara response base per hoga ki hamen API ke endpoint se kya response mil raha hai aur hame user ko kya response dikhana chahte Hain 
+
+user jab bhi kisi service per click Karega aur jab server per click Karega to Jo api ka response aaega ya FIR jo jo possibility hai vah sab Dhyan mein rakhkar hi hamen coding karni hai user ko number dene se pahle uska balance bhi cut karna hoga wallet se jitni bhi service ka price hoga uske hisab se 
+
+jab bhi koi user service ko buy karega jaise ek service ka naam hai any other ya Amazon ya whatsapp ya telegram agar ine service ko user click Karta hai to usse pahle ham use ek popup denge accept karne ka ki is service ki hamari koi guarantee nahin hai apne risk per use karen to usko ham ek check box denge usko click Karega FIR okay karke FIR vah Aag usko use kar sakta hai 
+
+HOME:-
+home page ke andar jo maine pahle bataya tha vahi chijen aaenge ki ek search box aur service ki list user
+
+
+Recharge:- 
+recharge ke andar apna recharge system rahega jiske through user apna jo hai wallet mein balance add Karega ismein bhi Apne 2 method Hain
+
+Trx/tron:-
+jaisa ki maine singup wale page per bataya tha ki user Jaise hi apna account verify Karega uske bad use ham ek trx adress parmanent assign kar denge jis per vah recharge Karega vah kaise kam Karega yah jo hai Trx ka recharge vagaira ka system iske liye main aapko API vagaira de dunga ya aap GitHub se bhi search karke kar sakte ho
+
+to is system ke andar kya rahega sabse pahle user trx per click Karega to usko vahan per ek box milega ki enter your trx amount like 1234  amount dalne ke bad user submit per click Karega submit ke bad usko next page dikhai dega Jahan per usko uska trx adress milega exchange rate milega ki 1 trx ka INR mein Kitna rate hai aur uska jo usne amount Dali usko vah dikhai degi aur vahan per usko ek box milega enter transactionid/hash id uske bad usko vahan per submit aur ek cancel ka button dikhai dega agar vah cancel kar dega to fir se vah recharge wale page per a jaega 
+
+here's trx exchange rate url check - https://min-api.cryptocompare.com/data/price?fsym=TRX&tsyms=INR
+
+transaction/hash check url- https://own5k.in/tron/?type=txnid&address={user trx address}&hash={transaction/hash id enter by user}
+demo url- https://own5k.in/tron/?type=txnid&address=TFJtHT3J8MYxoX1Z48Ua7KkxZXuowTptwQ&hash=9cda84de31613673bb7819d5877be32dae7f8be1a79ce134cea54e8a27b80732
+
+
+iske bad Jaise hi user ka recharge successful hoga to Jo total amount rahegi TRX exchange rate aur usne Jo Trx amount transaction/hash check url se milegi usko multiply karke ham uske wallet mein jitna Money banta hai usko add kar denge aur usko ek Chhota sa notification de denge ki falana falana amount is credit your wallet ya ₹50 is add in your wallet aur Jaise hi uska jo Money add hoga uske Trx adress per Jo payment hai us payment ko ham mere Wale main account per bhejenge jiska trx adress ham dashboard yani ki admin panel se add karenge uska system bhi aapko usmein mil jaega jab aap yah pura ka pura trx yani ki tron wala system karoge 
+
+trx sender url- https://own5k.in/tron/?type=send&from={user trx address}&key={privakey jo uper save ki thi signup time}&to={main trx address}
+demo link -https://own5k.in/tron/?type=send&from=TWFbdsxLkM462hWvzR4zWo8c681kSrjxTm&key=C4CEFCDC47B7E6BBBF1C52F280B614EFB475771B4929DA2C08242EB5AC90110A&to=TLSmP7GgeqjkUhhHwoNtdPBVdBMYYVcCsm
+
+Upi:-
+second option rahega upi payment ka ismein bhi same option rahenge user ko pahle amount ke liye ek box milega aur ismein minimum recharge rahega ₹50 agar usse kam hai to usko red alert a jaega ki minimum recharge is 50₹ aur aapko ek popup dalna hai Jaise user recharge page per aaega aur jab default option rahega vah upi rahega aur aapko ek popup set kar dena hai minimum recharge ₹50 else no refund 
+
+user Jaisi apna amount dalega submit Karega to apko dynamic QR code generate karna hai amount base par jisme meri upi id and amount hogi jisse user direct scan krega to amount auto fill hogi next page perQR code show hoga jo generate hua tha QR code ke niche ek box rahega enter your transaction ID aur uske niche rahega submit aur cancel wala button agar user isko cancel Karega to fir se upi wale page per a jaega yani ki recharge wale page pr aur aur submit par click karega to transaction ID verify hogi Jo API hai amount verify ki yah main aapko khud Dunga bus aapko implement karna hai aur yahan per bhi Jaise user ka recharge ho jaega to vahan per user ko ek notification dena hai ki falana amount is added ine your wallet 
+
+upi rc verify api- https://own5k.in/p/u.php?txn={transaction ID}
+
+demo url - https://own5k.in/p/u.php?txn=978338161805
+
+Note:- user trx/upi kisi se bhi recharge kre jab tk 1st request ka response na aa jaye next request accept hi na isse recharge me koi bug ni rhega aur ek vaar jo transaction ID se recharge ho jaye wo database me save kro jisse koi same id se recharge na kr ske
+agr recharge amount minimum amount se kam hai to user ko notification dena ki amount is less then 50₹ no refund 
+
+
+HISTORY:-
+history ke andar 2 tarike ki history rahegi ek to rahegi number yani ki SMS history aur ek rahegi recharge history 
+
+Number History:
+number history ke andar user ka data store rahega ki usne kab kaun sa number liya hai use tarike ka 
+number histry ke andar jo jo data aaega vah is tarike se hai
+
+agar user ko SMS milta hai to
+
+SL No.                      1
+ID                           12343556
+Number                    9897866676
+OTP                        12343 is your otp
+Service Name               1mg              
+Server                       1
+Price                         4.7₹
+Date                          5/09/2024  5:01:22pm
+Status                       Finsihed 
+Reason                     Sms received 
+
+agar user ko SMS nahin milta hai to matlab ke number cancel karta hai 
+
+SL No.                      1
+ID                           12343556
+Number                      9897866676
+OTP                          No Sms
+Service Name                1mg              
+Server                       1
+Price                         4.7₹
+Date                          5/09/2024  5:01:22pm
+Status                       Cancelled 
+Reason                     Sms Not received 
+
+ab upar jo maine aapko bataya hai ismein agar OTP aata hai man ke chalo ki user ek hi number per Kai bar SMS le leta hai to yah jo SMS wala OTP wala Jo box/area aaega yah iska size bada hota chala jaega jismein itna Jo bhi content aaega 
+aur yah Jo status ismein agar user ko OTP a Gaya hai to vah aaega finished aur agar user ke number per SMS nahin aata hai ya vah number Ko cancel Karta hai to status mein aaega cancelled aur reason ke andar aaega No Sms
+
+
+status nam se  check ke liye box dena hai jisme options honge 
+All- isme cancel/otp received history hogi
+pending - agr koi active order hai
+Success- jin number pr otp gya gya hai
+Cancelled- jo number cancel hai 
+ 
+inme se jo bhi option select karenge uski history show hogi 
+
+Date naam ka box hoga jisme date select kr sake from - to iske andar from mein jo date select kari us date se lekar to mein jo date select kari us tak ki histry load ho jayegi 
+
+ek vaar me 20 data show hoga history wale page pr
+
+Recharge:-
+recharge histry mein user ka wo  data aaega ki usne kab kitne ka recharge Kiya hai data is tarike se hai
+
+agar user UPi recharge Karta hai to is tarike ke entry aaegi 
+
+SL No.                    1
+Transaction ID            12343556
+Type                      upi
+Amount                   200₹
+Date                      04/08/2024 5:07:45pm
+
+
+agar user trx recharge Karta hai to is tarike ke entry aaegi 
+
+SL No.                   1
+Transaction ID           fhrhrrfueuf
+Type                     Trx
+TRX Amount.            13
+Exchange Rate.          14.4₹
+Amount                  187.2₹
+Date                     04/08/2024 5:07:45pm
+
+
+
+agar kisi user ke wallet mein admin ke through Paisa add kiya gaya hai to
+
+SL No.                    1
+Transaction ID            Admin
+Type                      Admin
+Amount                   200₹
+Date                      04/08/2024 5:07:45pm
+
+
+
+Date naam ka box hoga jisme date select kr sake from - to iske andar from mein jo date select kari us date se lekar to mein jo date select kari us tak ki histry load ho jayegi 
+
+ek vaar me 20 data show hoga history wale page pr
+
+
+MYORDER :- 
+jab user koi bhi service buy Karega to jab vah number purchase kar lega to vah Jo number hai usko myorder wale page per show hoga usme Jo detail dikhani hai vah is prakar hai
+
+
+Service Name.                   1mg
+Server.                           1
+Price.                            3.4₹
+OTP Type                       Single OTP
+
+
++919999999999.   copy wala button 
+Time Left        19:59
+
+Waiting For Sms 
+
+Cancel       Buy Again 
+      Next OTP(next otp api backend me lgega)
+
+ab jo maine aapko upar bataya hai ki ek to service ka naam aaega ki service ka naam kya hai aur uske server ka kaun sa number aur uska price kya hai aur kisi kisi website mein single SMS aata hai to vah bhi ham upar indicate karenge uske bad user ko number dikhai dega aur number ke right hand side mein ek copy ka button rahega uske niche time chalta rahega mines mein FIR uske bad SMS ka ek box rahega use box ke andar jaise jaise SMS aata rahega purana wala sms niche ho jaega aur naya wala upar rahega UN donon ke bich mein ek underline rahegi aur box ka size limited rahega aur jab box ka size bhar jaega to uske bad jo hai vah scrolling mein chala jaega 
+
+
+Jaise user number purchase Karega ek number ki validity 20 minut tak hai to aap 20 minut ka timer chalu kar doge minus me
+ab Jo cancel buyagain aur next OTP wale Jo button hai vah kaise kam karenge vah samjha deta hun cancel wala button per aapko 2 minut ka time rhega 2 mint se pehle cancel button disable rhega 2 mint bad button clickable hoga yeh 2 mint timer apko api backend me hi set krna hai aur agar 2 minut se pahle user ka us number per SMS aata hai to Jo vah cancel wala button finish order button mein convert ho jaega matlab cancel button ki jagah finish wala dikhai dega agar user ko vah number vahan se apne myorder mein se hatana ho to wo finish order wale button pr click krega to wo number frontend page se disappear ho jayega. buy button se user same service same server ki  dobara buy kar sakta hai next OTp wala api jab user ka OTP a jaega to vah Jo next sms/otp api  hai vah trigger ho jaegi ek baat aur yad rakhni hai har API mein next OTP ka API nahin hoga apko dyaan dena hai jab user kisi bhi service ka server select Karta hai to 
+aapko yah bhi dekhna hai ki uska OTP type kya hai single Otp aur multiple OTP agar multiple OTP hai to aapko next OTP ka API trigger karna hai backend mein agar uska next OTP ka API Diya hua hai to agar selected service ka server mein OTP type single OTP hai to aapko OTP aane ke bad koi bhi next OTP ka API trigger nahin karna kyunki single OTP ka matlab hai ki uska koi next OTP ka API hai hi nahin 
+
+aur aapko yahan per ek chij aur Dhyan mein rakhni hai man ke chalo user ne koi number le liya aur kisi reason se user ne website band kar di ya browser ko band kar diya to agar vah 1 ghante bad aata hai ya 2 ghante bad website ko fir se on Karta hai to Jo vah number hai my order mein se aapko vah 19 minut bad  apko number cancel ka api hai usko run  karke pahle aapko number cancel karna hai aur my order mein se usko aapko vahan se hata dena hai aur uska jo amount hoga vah uske wallet mein add kar dena hai aur histry mein bhi mention kar dena hai ki due tu number cancel aur agr number par already otp hai to apko wo number myorder page se disappear krna hai agar user ke bahut jyada active order hai to aapko ek scrolling type ki line deni hai right hand side se jisse vah slider ko pakadkar uper niche kar saken 
+
+
+
+CHECK SMS:
+
+fastsms.su is website ke andar ek feature hai ki agar aapke pass koi bhi SMS format hai to vah SMS aap ismein dalkar aap yah check kar sakte ho ki vah SMS format kis service ke andar aaega to uske liye lagani hai 
+
+sb sb apko api wali file me mi jaega 
+
+API:- 
+API ke andar ham apni website ka API bhi lagaenge jismein yah details hongi 
+ User ki api key hogi api change ka button hoga and Api ko copy ka button 
+ 
+ api option - 
+Get Balance - user balance get api 
+http://api.localhost.in/balance/apikey={api-key}
+response - {"balance":100} agr 0 balance hai to
+{"balance":0}
+other response - 
+{"error":"invalid key"} - wrong api key
+{"error":"under maintenance"} - if website under maintenance 
+
+Get Number - get number ka api hoga like
+http://api.localhost.in/number/apikey={api-key}&server={servernumber}&servicename={servicename}
+responce - {"status":"ok","number":"9999999999","id":"123456789"}
+other responce - 
+{"error":"invalid key"} - wrong api key
+{"error":"no stock"} - when number not available 
+{"error":"low balance"} - when balance low
+{"error":"under maintenance"} - if website under maintenance 
+
+Get OTP - otp get api 
+http://api.localhost.in/otp/apikey={api-key}&server={servernumber}&id={id}
+responce - 
+{"status":"ok","otp":"waiting for otp"} - waiting for otp
+{"status":"ok","otp":"1235 is your otp"}- when otp come 
+{"status":"ok","otp":"number cancelled"} - if number already cancelled 
+{"error":"under maintenance"} - if website under maintenance 
+
+Cancel Number - number cancel api 
+http://api.localhost.in/cancel/apikey={api-key}&server={servernumber}&id={id}
+responce - 
+{"status":"success"}- when number is cancel 
+{"error":"wait 2 mints before cancel"} - if user try to cancel number before 2 mint
+{"error":"under maintenance"} - if website under maintenance 
+{"error":"otp already come"} - if otp came and user run number cancel api 
+
+Get Service List and Server List 
+http://api.localhost.in/list-price/apikey={api-key}
+{"error":"under maintenance"} - if website under maintenance 
+
+service ka naam hi service code rhega 
+har website ki api ko proper response check karke hi add kroge
+
+
+
+
+Contect Support :
+iske andar apna telegram ka link Laga denge jisse user direct connect kar saken 
+
+
+
+Join Channel :
+iske andar bhi ham Apne channel ka telegram ka link Laga denge 
+
+aur contact support join channel agar aap isko chaho to ek floating button Laga sakte ho niche right hand side ke bottom mein thoda sa achcha lagega yah aapki ichcha hai ya aapki marji hai
+
+
+
+About:-
+is section ke andar ham apni website ke bare mein bataenge ki hamari website ka kya Kam hai kaise use karte hain kis tarike se
+
+aur apni website ke bottom mein ham apna term &  condition privacy policy kuchh chijen dal denge 
+
+
+
+
+
+
+
++++++++++Admin/dashboard/panel+++++++++++
+admin panel ke andar mujhe vah chhoti se chhoti har chij chahie Jo website ko control Karen totally website Apne control mein honi chahie agar main kuchh point bhul bhi jata hun aur agar bad mein yad bhi aate Hain to main unko add karva sakta hun uske liye main aapko alag se koi charge nahin dunga 
+
+Jo points abhi mere Dhyan mein hai main yahan per mention kar raha hun  
+
+
+
+Login:
+admin panel ko access karne ke liye login system chahie aur 2 step authentication ke sath 
+
+Service List:-
+iske andar  sabhi services hongi Jo website per frontend per user ko dikhai denge 
+har service ke samne ek on off ka button rahega agar main button ko on kar dunga to service dikhai nahin degi website ke andar aur main usko off kar dunga to service vahan per rahegi aur uske samne ek delete ka button rahega agar mere ko service delete karni hai to main usko delete kar dunga permanent database se bhi delete ho jayegi 
+ har service ki server ki list bhi vahan per rahegi aur har server ke samne ek on/off button rahega agar main button ko on kar dunga to Jo server hai vahan per nahin dikhai dega website per usko off kar dunga to vahan per dikhai dega aur har server ke samne ek delete ka button rahega agar koi server delete karna hai to vah delete ho jaega database se bhi  
+
+
+
+Recharge History:
+iske andar har user ki email ki listing aaegi serial number ke sath aur main jis bhi email per click Karunga to uske andar user ki har detail aaegi Jo detail aani hai 
+
+agar user UPi se recharge Karta hai to is tarike ke entry aaegi 
+            Email : Admin@admin.com
+Wallet Balance:            134₹
+SL No.                    1
+Transaction ID            12343556
+Type                      upi
+Amount                   200₹
+Date                      04/08/2024 5:07:45pm
+
+
+agar user trx recharge Karta hai to is tarike ke entry aaegi 
+
+SL No.                      1
+Transaction ID            fhrhrrfueuf
+Type                      Trx
+TRX Amount.             13
+Exchange Rate.           14.4₹
+Amount                   187.2₹
+Date                      04/08/2024 5:07:45pm
+
+
+
+agar kisi user ke wallet mein admin ke through Paisa add kiya gaya hai to
+
+SL No.                    1
+Transaction ID            Admin
+Type                      Admin
+Amount                   200₹
+Date                      04/08/2024 5:07:45pm
+
+
+status nam se  check ke liye box dena hai jisme options honge 
+All- isme cancel/otp received history hogi
+pending - agr koi active order hai
+Success- jin number pr otp gya gya hai
+Cancelled- jo number cancel hai 
+ 
+inme se jo bhi option select karenge uski history show hogi 
+
+Date naam ka box hoga jisme date select kr sake from - to iske andar from mein jo date select kari us date se lekar to mein jo date select kari us tak ki histry load ho jayegi 
+
+ek vaar me 20 data show hoga history wale page pr
+yahan aapko total data Kitna dekhna hai like 10 20 50 100 uska filter lgana hai
+
+
+
+
+SMS HISTORY: 
+SMS histry mein bhi aapko serial number wise user ki email ki listing karni hai aur Date naam ka box hoga jisme date select kr sake from - to iske andar from mein jo date select kari us date se lekar to mein jo date select kari us tak ki histry load ho jayegi 
+
+
+yahan aapko total data Kitna dekhna hai like 10 20 50 100 uska filter lgana hai aur niche last aur next ka button laga dena hai aur usmein data aise show hoga 
+
+Email : Admin@admin.com 
+Wallet Balance: 133₹
+
+agar user ko SMS milta hai to
+
+SL No.                    1
+ID                         12343556
+Number                   9897866676
+OTP                       12343 is your otp
+Service Name             1mg              
+Server                     1
+Price                      4.7₹
+Date                      5/09/2024  5:01:22pm
+Status                    Finsihed 
+Reason                   Sms received 
+
+agar user ko SMS nahin milta hai to matlab ke number cancel karta hai 
+
+SL No.                    1
+ID                         12343556
+Number                   9897866676
+OTP                       No Sms
+Service Name             1mg              
+Server                     1
+Price                      4.7₹
+Date                      5/09/2024  5:01:22pm
+Status                    Cancelled 
+Reason                   Sms Not received 
+
+status nam se  check ke liye box dena hai jisme options honge 
+All- isme cancel/otp received history hogi
+pending - agr koi active order hai
+Success- jin number pr otp gya gya hai
+Cancelled- jo number cancel hai 
+ 
+inme se jo bhi option select karenge uski history show hogi 
+
+
+
+
+
+
+
+
+
+USERDATA:
+iske andar bhi serial wise users ki email rahegi aur jis bhi email per main click Karunga uska data is type se aaega 
+
+Black button on/off  Edit profile.          Delete 
+Useid                   if any
+Email                   admin@admin.com
+user IP                 143.57373.88
+Balance                133₹
+Password.              if Login with email 
+API key.                47r7373737374
+TRX Address           tueu37rueueuru
+Private Key             58484848484884484
+Join                    04/08/2024 05:23pm
+
+
+Number History                Recharge History
+
+
+upar maine aapko user ko block karne ka  button Diya hai agar user ki profile edit karne Ho like uska balance edit karna ho ya kuchh bhi edit karna ho to vah aur ek delete ka button diya hai agar main us per click kar dunga to user ka sab kuchh delete ho jaega uska account profile sab kuchh database se. user ka agar koi user id hai to vah show hoga user ka email show hoga user ka IP adress IP adress kaise milega jab user sign up Karega to ham uska ip get kar lenge user ka current balance kitna hai user ka password user ki API key sign up ke time usko Jo Trx  adress assign Kiya gaya tha vah aur uski private key jisse ham usse balance nikal sakenge join time kab account create hua wo. aur niche number histry and recharge history do button diye Hain agar muje user ki vahi ki vahi histry dekhni hai koi si bhi to vah aap vahan se usko connect kar saken directly history dekh sake. ismein bhi aapko filter ki limit lagani hai filter matlab ki Kitna data dekhna limit 10 20 50 100 200 use tarike se aur next ka aur last ka button bhi lagana hai 
+
+
+MAINTENANCE :
+iske andar different type ke maintenance aane hai joki hai
+
+master maintenance:-
+agar master maintenance on kar diya to website bilkul Kam nahin karegi aur website ke home page per ek message aaega website under maintenance aur ek ham maintenance wali image Laga denge single API koi bhi Kam nahin karegi chahe vo recharge ki Ho chahe number lene ki Ho chahe histry ki ho kuchh bhi Kam nahin karegi agar koi api use Karta hai to ek response mein aaega website under maintenance 
+
+
+server maintenance:-
+server maintenance ke andar hamare jitne bhi server rahenge UN sab ki listing rahegi aur ham kisi bhi server ko on off yani ki maintenance karte hain agar kisi server ko humne on kar diya to vah Jo server hai vah kisi bhi service ke andar Show ni hoga 
+aur agr koi server ko api se call kre to use server under maintenance response aana chahie 
+
+Login/Signup maintenance: 
+login sign up maintenance iske andar agar login maintenance on kar diya to koi user login nahin kar payega agar signup maintenance on kar diya to koi bhi user ko sign wala page nahin milega aur na hi vah sign up kar payega aur agar donon hi on kar diye to vah kuchh bhi dikhai nahin dega aur jo yah hai yah Jo headers mein yani ki menu bar mein se bhi iske option hat jaenge 
+
+recharge maintenance:-
+iske andar upi aur Trx donon ka maintenance on ka button rahega agar upi ka on kar diya to upi ka jo option hai to dikhai nahin dega recharge page per agar Trx ka maintenance on kar diya to Trx ka dikhai nahin dega agar donon ka kar Diya to recharge wala Jo page hai vah apne menu bar mein se hat jaega vah milega hi nahin agar kisi ke pass recharge wali API hai to bhi vah Kam nahin karegi agr dono me se koi bhi maintanence on hoto to uska notification flash like upi recharge in on maintenance 
+
+
+
+contact support/join Channel maintenance: 
+agar cal ko koi dikkat aati hai aur ham contact support aur join channel inko maintenance ka on kar dete Hain to inko option bhi vahan se hat jaega menu bar mein se  
+
+
+
+API UPDATE & Margin and exchange rate :- 
+iske andar ham kisi bhi server ka agar api update Karna hai to ham kar lenge iske andar aapko ek drop down menu dena hai jismein ham server ko select kar saken aur uske niche aapko dena hai ki margin Kitna rakhna hai server ka aur uske niche rakhna hai ki exchange rate Kitna rakhna hai aapko 
+
+
+UPI & TRX UPDATE:
+iske andar bhi aapko ek drop down menu dena hai jismein option rahe ki upi aur trx usko select karne ke bad usmein dikhana chahie ki current API ya upi id yeh hai aur current trx adress yah hai aur uske niche ek box aur dena hai ki enter new QR code aur trx adress 
+aur jab bhi main koi Trx adress update Karun ya upi id update Karun to vahan per ek message aana chahie ki successfully updated
+
+
+Discount/magin
+iske andar different type ka discount ya margin rahega ismein aapko sabse pahle ek drop down menu dena hai usmein hona chahie ki 
+servar discount 
+service discount 
+user discount 
+
+server discount 
+agar server discount select karta hun to uske niche ek box aur aana chahie server select ka drop down menu like 1234 aise karke jitne bhi Apne server Hain server select karne ke bad usmein ek box aur hona chahie jismein main input Karunga ki mere ko Kitna discount dena hai plus ya mines mein agar main mines mein karta hun like -1 to uska server ka jo current price hoga kisi bhi service ka vah utna usmein se mines ho jaega agar main normal 1 2 3 dalta Hun to Jo current price rahega vah utna usmein add ho jaega
+niche save aur cancel ka button 
+
+service discount 
+agar service discount select karo to uske niche ek option aur aana chahie server selection ka drop down menu me jaise uper btaya uske baad
+uske niche service list ka box aana chahie jiske andar sari services rahenge aur usmein search ka option bhi hona chahie jisse main koi bhi service search karke select kar sakun jab service ka naam select kar lunga to uske niche ek box aur aaega price ka ya margin jo ki main enter krunga -1 se current price me se less hoga normal likhane se current price me add ho jayega niche save aur cancel ka button 
+
+
+user discount 
+agar main user discount select karta hun to vahan per uske ek box aaega user ki jitni bhi email rahegi vah list hoke vahan per a jaenge aur ek search ka box jismein koi email search karke usko select kar sakun  
+uske bad server ka ek box rahega drop down menu ke sath jismein server select kar sakun 
+uske bad jitni bhi service list rahegi uski listing a jayegi search box ke sath jismein service select kar sakun 
+uske bad margin wala box rahega ki mere ko Kitna margin set karna mines mein plus mein aur uske niche submit aur cancel ka button rahega 
+
+aur ine sab ke bad niche record rahega ki kaun si setting apply kar rakhi hai ki  server discount hai service discount hai ya user discount hai 
+aur jo koi bhi setting apply rahegi unke samne ek delete ka button rahega agar mere ko vah record delete karna hai to 
+agar user discount ka record hai to vahan per user ki email aane chahie to jisse main use email per jakar agar use user ke liye aur koi discount add karna ho to uske andar jakar main add kar sakun matlab ki har EK user ka uske andar record hona chahie yah nahin hai ki agar same user ka add karna ho fir se to uski alag alag entry Ho 
+
+BLOCK SYSTEM :
+iske andar aapko Aisa system banana hai jo har user ke account ko check Karen ki usne total recharge kitne ka Kiya hai usmein admin ka balance bhi add rahega agar admin ne balance add kiya hai to vah bhi aap count karoge to aap pahle total recharge dekhoge Kitna aaya hai uske bad aap uski histry mein check karoge ki usne success service kitni liye aap unka price total count karoge count karke Jo total recharge hai usmein se mines karoge mines karne ke bad Jo balance bachta hai aur uske current wallet ka Jo balance agar vah match nahin karta hai to user ka turant block kar doge 
+
+total rc amount 
+total otp/success amount 
+check amount=total rc amount - total otp/success amount 
+current balance 
+if check amount is not equally current balance no matter its low or high block user 
+
+
+ISI ke andar block user ki list rahegi serial number rahega aur user ka vah rahega email  aur agar main kisi bhi user ki email per click Karunga to uska pura pura detail a jaega ki total recharge usne itna kiya hai aur jo total usne service liye hain unki list mein a jaenge kis sarvar se itna Liya hai uska itna cost hai aur server 2 se itna Liya hai matlab jis bhi sarvar se Liya hai uski detail aur unka Kitna price banta hai aur vah total aur usne jitna recharge kar rakha vah aur uska jo froad wala balance 
+
+aur aapko ek button aur laga dena profile ka to agar main uske profile wale button per click Karunga to user data us per lekar chala jaega to jisse main uske balance ko edit karke sahi  kar sakun to user unblock ho jaega 
+
+
+
+
+
+UNSEND TRX :- 
+iske andar user ki serial wise email id aur email per mein click Karunga to usmein user ka jo trx adress hai vo aaega aur uske Jo private key vah aaegi aur uske niche delete wala button rahega yah tab kam aaega ki agar user ne trx per recharge kiya hai aur jo apna system rahega use wallet se apne main wallet per send karne ke liye agar koi error aata hai to uske detail yahan per a jayegi jisse ham bad mein usko manually transfer kar saken 
+
+
+
+
+TELEGRAM NOTIFICATION:-
+iske andar main aapko telegram ke direct API provide Karunga jiske andar jab bhi koi user recharge Karega ya number get Karega OTP get Karega number cancel Karega ya koi user block hota hai UN sab ka notification mere telegram per mere ko a jaega 
+aur total seling kitni Hui hai har aadhe ghante mein API call hogi Jo mere ko detail bhejthi ki kis server se Kitna seling Hui hai total balance kitna hai vah sab kuchh uske liye main aapko dikha Dunga samjha dunga
+
+
+
+NOTE :- 
+AGAR MERE KO KOI BHI CHIJ ADD ON KARANI HO JO ABHI MERE DIMAG MEIN NAHIN HAI chhoti chhoti CHIJEN TO VAH MAIN BAD MEIN BHI BATA SAKTA HUN JO WEBSITE KE LIYE AND ADMIN PANEL KE REQUIRED HAI MAIN USKE LIYE KOI EXTRA PAY NI KARUNGA MAIN FIR SE BATA DETA HUN CHAHE WEBSITE PER HO CHAHE ADMIN PANEL MEIN HO AGAR LAGTA HAI KI KUCHH JYADA HI BADA CHANGE HAI YA KOI CHIJ ALAG SE ADD KARVA RAHA HUN TO USKA MAIN AAPKO ALAG SE PAISA DE DUNGA IS ORDER KO COMPLETE KARNE KE BAD AAP FIR SE ORDER KAR DENA
+
+
+ORDER COMPLETE HONE KE BAD MUJHE PROPER DOCUMENTATION CHAHIE AGAR KAL KO KOI BHI DIKKAT AATI KAMI AATI HAI AUR AGAR AAP AVAILABLE NA HO AUR MAIN KISI AUR DEVELOPER KO FIND KARUN TO USKO SAMAJH MEIN A JAAYE KI KAUN SA CODE KAHAN PER KAM KAREGA AUR ORDER COMPLETE KARNE KE BAD AAPKE KAM SE KAM BHI 30 DIN KI GUARANTEE RAHEGI AGAR WEBSITE MEIN chalte chalte KOI BHI KAMI AATI HAI TO AAP USKO FREE OFF COST KARKE DOGE
+
+
+AUR AAP MUJHE SHURU SE LEKAR LAST TAK SAB KUCHH BATAAOGE KI WEBSITE KAISE HOST HOGI KAISE RUN HOGI AGAR SERVER APNA RESTART HOTA HAI TO KIS TARIKE SE KYA HOGA 
+
+MUJHE WEBSITE KA SOURCE CODE BHI CHAHIE PURA KA PURA KOI BHI THIRD API NAHIN
+
+MUJHE WEBSITE KA DESIGN RESPONSIVE CHAHIE DESKTOP KE LIYE AUR MOBILE KE LIYE AUR MUJHE SEO OPTIMIZE BHI CHAHIE 
+
+JO BHI CHIJEN REQUIRED HAI VAH AAP MUJHE PROVIDE KAROGE AUR SAB CHIJ BATAAOGE BHI 
+
+SHURU SE LEKAR LAST TAK SARA KUCHH KAM AAP KAROGE AUR MUJHE AAP SAB KUCHH BATAAOGE WEBSITE BANNE SE LEKAR HOSTING TAK KA SAB KUCHH 
+
+WEBSITE BANNE KE BAD AUR LIVE HONE KE BAD AGAR WEBSITE MEIN KOI BHI BUG YA GLITCH YA KOI BHI KAMI RAH JAATI HAI TO AAP USE FREE OFF COST KARKE DOGE AUR MUJHE DAILY BASE PER UPDATE CHAHIE SCREENSHOT YA VIDEO RECORDING JISSE MAIN APNE KAM KE LIYE UP TO DATE RAH SAKUN 
+
+
+
+HAR RAAT 12 BJE SERVICE LIST UPDATE HUA KREGI AND UNKA PRICE BHI
+
+
+WEBSITE KE HOMEPAGE PR SPACE RAKHANA KOI BULLETIN TYPE NEW FLASH KRNI HOTO
+
+
+
+
+WEBSITE KA KOI BHI PAGE ZOOM IN ZOOM OUT NI HONA CHAHIYE 
+EK BLANK PAGE LGANA HAI AGAR KOI USER URL KE LAST ME KUCH BHI TYPE KRKE SEARCH KRE TO NOT FOUND WALA ERROR AAYE
+website Links
+https://fastsms.su/ - 20 mint
+https://5sim.net/ -20 mint
+https://smshub.org/en/main - 20 mint
+https://tiger-sms.com/ - 20 mint
+https://grizzlysms.com/ - 20 mint
+https://tempnum.org/ru/login - 20 mint
+https://smsbower.online/ - 10 mint
+https://sms-activate.io/en - 20 mint
+http://ccpay.live/ - 20 mint
+https://sms-activation-service.com - 20 mint
+https://sms-man.com/ - 20 mint
+
+
+Admin panel me promo ka bhi option dena hai jisme kitni recharge par kitna bonus dena hai wo rhega 
+

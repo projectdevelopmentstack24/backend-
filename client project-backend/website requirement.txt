@@ -1,0 +1,380 @@
+++++++++Website Requirement++++++++++++
+
+You will receive a Figma design/file, and 70% of the things will be according to the design, and I have mentioned some changes that need to be made below.
+
+I will use 10 to 12 websites for my website, which I will refer to as servers here.
+1. Homepage
+On the homepage, whenever a user opens the website for the first time, they will see a search box where they can search for the services we will sell. Below that, there will be a list of services. Now, let me explain where we will get this service list from. We will get the lists from all the websites we use, compare them, and create a list of services that are common across the websites. For example, take the service named Amazon. If the Amazon service is available on all 12 servers, we will list it under one name. This means we will collect the names of all the websites, compare the service lists, and take the common names. If a name from any website does not match with any other website, meaning it is unique, we will add it as is.
+
+Whenever a user clicks on a service, like Amazon, they will see a list of all the servers where that service is available, along with the prices. If there are multiple prices for a service on a website, all those prices will be added to the sub-servers. For example, if there are three prices, they will be arranged in alphabetical order like A, B, C, D, etc.
+
+As I mentioned, if a user visits for the first time and selects any server, and if they are not logged in, they will be taken to the sign-up or login page. You will need to decide what to set up for that.
+
+When we list the services, if a single SMS is sent for some services or websites, we will indicate that next to the service.
+
+All the services you list should be in scrolling mode, meaning you need to provide a slider that the user can drag up and down.
+
+All the service lists should be in alphabetical order, and the first letter of each service should be capitalized while the rest should be in lowercase.
+
+If a user searches for a service and it is not available, they should see a suggestion for "any other" service.
+
+You also need to provide a live chat support button so that users can talk to support live.
+
+2. Login
+On the login page, the user will have two options: one to log in via email, and the email must not use any temporary email, only Gmail, Yahoo, Outlook, or Hotmail. The second option will be to log in via Google, and whenever the user logs in with email, they will have to complete a Cloudflare captcha.
+
+3. Signup
+On the signup page, the user can sign up in two ways: one via email, which will also require verification. You can either send a URL to the user's email for verification or use an OTP system. As soon as the user enters their email, password, and confirm password, and verifies the Cloudflare captcha, they will receive an OTP. When they enter the OTP and verify it, their account will be verified. Until they verify, their account will not be created.
+
+Whenever a user creates an account, we will assign them a permanent TRX address for the payment system, which they can use for recharges, which we will discuss later.
+
+Whether the user logs in or signs up, the login or create account button will remain disabled until they fill in the required fields like password and email.
+
+4. Before Login Menu
+When the user first visits the website, the menu for mobile screens will be at the top left. The options in the header will be:
+- Home
+- Login
+- Signup
+- About
+
+On the right-hand side, there will be a profile icon, and slightly to the left of the profile icon, there will be a wallet icon showing the user's balance. When the user clicks on the profile icon, their email will be displayed, along with an option to change the password. The change password option will only be available if the user logs in via email. If they log in or sign up using a Google account, there will be no need for a change password option, and there will also be a logout option.
+
+5. After Login
+Once the user logs in, the menu bar on the left side will have the following options:
+- Home
+- Recharge
+- History
+- My Order
+- Check SMS
+- API
+- Buy Accounts
+- Contact Support
+- Join Channel
+- About
+
+All API-related tasks will be response-based, meaning we will show the user what response we are getting from the API endpoints.
+
+Whenever a user clicks on a service and then on a server, the API response will be taken into account, and we need to code accordingly. Before giving the user a number, we will also deduct the balance from their wallet based on the service price.
+
+Whenever a user buys a service, like any other service, Amazon, WhatsApp, or Telegram, if the user clicks on these services, we will first show them a popup asking them to accept that we do not guarantee this service and that they should use it at their own risk. They will have to check a box to proceed.
+
+HOME:
+The homepage will contain the previously mentioned elements: a search box and a list of services for the user.
+
+Recharge:
+The recharge section will have a system through which the user can add balance to their wallet. There will be two methods for this.
+
+TRX/Tron:
+As mentioned on the signup page, once the user verifies their account with the OTP, we will assign them a permanent TRX address for recharges. I will provide you with the API for how the TRX recharge system will work, or you can search for it on GitHub.
+
+In this system, the user will first click on TRX, and they will see a box asking them to enter their TRX amount, like 1234. The minimum recharge amount will be 2 TRX. If they enter an amount less than that, a red alert will appear stating that the minimum recharge is 2 TRX. After entering the amount, the user will click submit, and they will be taken to the next page where they will see their TRX address, the exchange rate, and the amount they entered. There will also be a box to enter the transaction ID/hash ID, followed by a submit and a cancel button. If they cancel, they will return to the recharge page.
+
+Once the user's recharge is successful, we will multiply the total amount by the TRX exchange rate and the amount they entered, and we will add the corresponding amount to their wallet. They will receive a small notification stating that a certain amount has been credited to their wallet, e.g., ₹50 has been added to their wallet. As soon as the money is added, the payment made to their TRX address will be sent to my main account, which will be added from the dashboard (admin panel). This system will also be included when you implement the entire TRX system.
+
+UPI:
+The second option will be for UPI payments, which will have the same options. The user will first see a box for entering the amount, and the minimum recharge will be ₹50. If they enter an amount less than that, a red alert will appear stating that the minimum recharge is ₹50, and you need to set up a popup stating that the minimum recharge is ₹50, else no refund.
+
+When the user enters their amount and submits, they will see a QR code on the next page, along with a box to enter their transaction ID and submit and cancel buttons. If the user cancels, they will return to the UPI recharge page.
+
+Note: Users should not be able to make another request until the first request's response is received, to avoid bugs in the recharge process. Once a transaction ID is used for recharge, it should be saved in the database to prevent duplicate recharges with the same ID. If the recharge amount is less than the minimum amount, the user should be notified that the amount is less than ₹50, and no refund will be issued.
+
+HISTORY:
+The history section will have two types of history: one for SMS history and one for recharge history.
+
+Number History:
+The number history will store the user's data regarding which number they have taken and when. The data will be structured as follows:
+
+If the user receives an SMS:
+
+SL No. 1
+ID 12343556
+Number 9897866676
+OTP 12343 is your otp
+Service Name 1mg
+Server 1
+Price 4.7₹
+Date 5/09/2024 5:01:22pm
+Status Finished
+Reason SMS received
+If the user does not receive an SMS:
+SL No. 1
+ID 12343556
+Number 9897866676
+OTP No SMS
+Service Name 1mg
+Server 1
+Price 4.7₹
+Date 5/09/2024 5:01:22pm
+Status Cancelled
+Reason SMS Not received
+
+
+As mentioned above, if the user receives an OTP, the status will be "Finished," and if the user does not receive an SMS or cancels the number, the status will be "Cancelled," with the reason being "No SMS."
+
+You will also need to provide two filter options: one for the user to view their data by date and another filter option to show success and cancel. In the success filter, the data will show the numbers for which the user received an OTP, and in the cancel filter, it will show the data for numbers where the OTP was not received and were cancelled. If the user clicks on the success filter, it will show the total number of successful requests they have made, and if they select the cancel filter, it will show the total number of cancellations. If they select a date-wise filter, it will be set accordingly, and you should provide an option for how much data they can view at once, like 10, 20, 50, or 100, to avoid overloading the database. There should also be next and previous options to navigate through the pages.
+
+Recharge:
+The recharge history will show the data regarding when the user recharged and how much. The data will be structured as follows:
+
+If the user recharges via UPI:
+SL No. 1
+Transaction ID 12343556
+Type UPI
+Amount 200₹
+Date 04/08/2024 5:07:45pm
+
+If the user recharges via TRX:
+SL No. 1
+Transaction ID fhrhrrfueuf
+Type TRX
+TRX Amount. 13
+Exchange Rate. 14.4₹
+Amount 187.2₹
+Date 04/08/2024 5:07:45pm
+
+If money is added to a user's wallet through the admin:
+SL No. 1
+Transaction ID Admin
+Type Admin
+Amount 200₹
+Date 04/08/2024 5:07:45pm
+
+You will also need to add filter options for date-wise and total data view limits like 10, 20, 50, or 100.
+
+MYORDER:
+When a user buys any service, the number they purchase will be shown on the My Order page with the following details:
+Service Name. 1mg
+Server. 1
+Price. 3.4₹
+OTP Type Single OTP
++919999999999. Copy button
+Time Left 19:59
+Waiting For SMS
+Cancel Buy Again
+Next OTP
+
+
+As mentioned above, the service name, server number, and price will be displayed. If a single SMS is sent for some services, we will indicate that above. The user will see the number, and there will be a copy button next to it. Below that, a timer will run for 20 minutes. The SMS box will display incoming messages, with older messages moving down as new ones arrive. There will be an underline between the messages, and the box size will be limited. Once the box is full, it will scroll.
+
+When a user purchases a number, it will be valid for 20 minutes, and you will start a countdown timer. The cancel, buy again, and next OTP buttons will function as follows: the cancel button will be disabled for one minute after the user takes the number. If an SMS arrives before the minute is up, the cancel button will change to "Finish," allowing the user to remove the number from their My Order.
+
+You also need to consider that if a user takes a number and closes the website or browser for any reason, and they return after one or two hours, the system should automatically cancel the number after 20 minutes and remove it from My Order, adding the amount back to their wallet and mentioning it in the history as a due cancellation. If the user has many active orders, you should provide a scrolling line on the right side so they can drag it up and down.
+
+CHECK SMS:
+The website fastsms.su has a feature where you can enter any SMS format to check which service it belongs to.
+
+API:
+We will also implement our website's API, which will include the following details:
+- User API key
+- API change button
+- API copy button
+- Get Number
+- Get OTP
+- Next OTP (if you add this to the backend, it may not be necessary)
+- Cancel Number
+- Get Balance
+- Get Service List and Server List
+
+The service name will be the service code, and you will add each website's API after checking the proper response.
+
+BUY ACCOUNTS:
+In this section, we will sell ready-made accounts. We will save usernames, emails, or passwords from third parties and sell them, like Gmail or Facebook accounts. We will show the total quantity available and the price, and provide an option for the user to specify how many they want to buy, along with a buy button. This section will also include the user's purchase history.
+
+Contact Support:
+We will add a link to our Telegram for direct user support.
+
+Join Channel:
+We will also add a link to our Telegram channel.
+
+You can also add a floating button for contact support and join channel options at the bottom right side for better visibility.
+
+About:
+In this section, we will explain what our website does and how to use it. At the bottom of the website, we will include our terms & conditions and privacy policy.
+
++++++++++Admin/dashboard/panel+++++++++++
+In the admin panel, I need every little detail to control the website completely. If I forget any points, I should be able to add them later without any extra charge.
+
+Here are the points I currently have in mind:
+
+Login:
+The admin panel needs a login system with two-step authentication.
+
+Service List:
+This section will contain all the services that will be displayed to users on the frontend. Each service will have an on/off button. If I turn the button on, the service will not be displayed on the website, and if I turn it off, it will be visible. There will also be a delete button to permanently remove the service from the database. The server list for each service will also be available, with an on/off button for each server.
+
+Recharge History:
+This section will list all users' emails with serial numbers. When I click on any email, I will see all the details of that user.
+
+If a user recharges via UPI, the entry will look like this:
+Email : Admin@admin.com
+Wallet Balance: 134₹
+SL No. 1
+Transaction ID 12343556
+Type UPI
+Amount 200₹
+Date 04/08/2024 5:07:45pm
+
+If a user recharges via TRX, the entry will look like this:
+SL No. 1
+Transaction ID fhrhrrfueuf
+Type TRX
+TRX Amount. 13
+Exchange Rate. 14.4₹
+Amount 187.2₹
+Date 04/08/2024 5:07:45pm
+
+If money is added to a user's wallet through the admin:
+SL No. 1
+Transaction ID Admin
+Type Admin
+Amount 200₹
+Date 04/08/2024 5:07:45pm
+
+You will also need to add filter options for date-wise and total data view limits like 10, 20, 50, or 100.
+
+SMS HISTORY:
+The SMS history will also list users' emails serially, and you will need to add filters for how much data to view at once, along with last and next buttons. The data will be displayed as follows:
+Email : Admin@admin.com
+Wallet Balance: 133₹
+If the user receives an SMS:
+SL No. 1
+ID 12343556
+Number 9897866676
+OTP 12343 is your otp
+Service Name 1mg
+Server 1
+Price 4.7₹
+Date 5/09/2024 5:01:22pm
+Status Finished
+Reason SMS received
+
+If the user does not receive an SMS:
+SL No. 1
+ID 12343556
+Number 9897866676
+OTP No SMS
+Service Name 1mg
+Server 1
+Price 4.7₹
+Date 5/09/2024 5:01:22pm
+Status Cancelled
+Reason SMS Not received
+
+
+You will need to add a filter button to show how many were successful and how many were cancelled. As mentioned in the website requirements, if we click on success, it will show the total number of successful requests, and if we click on cancel, it will show the total number of cancellations. You will also need to add a date-wise filter.
+
+USERDATA:
+This section will also list users' emails serially, and when I click on any email, the data will be displayed as follows: 
+Black button on/off Edit profile. Delete
+User ID if any
+Email admin@admin.com
+User IP 143.57373.88
+Balance 133₹
+Password. if Login with email
+API key. 47r7373737377374
+TRX Address tueu37rueueuru
+Private Key 58484848484884484
+
+Number History                    Recharge History
+
+I have provided a block user button to block any user if I need to edit their profile, like editing their balance or anything else. There is also a delete button, which, when clicked, will delete the user's account and profile from the database. If the user has a user ID, it will be displayed along with their email and IP address. The IP address will be obtained when the user signs up. The current balance, password (if logged in with email), API key, TRX address, and private key will also be displayed.
+
+There will also be buttons for number history and recharge history, allowing me to connect directly to view any user's history.
+
+You will also need to set limits for how much data can be viewed at once, like 10, 20, 50, 100, or 200, along with next and last buttons.
+
+MAINTENANCE:
+This section will include different types of maintenance:
+
+Master Maintenance:
+If master maintenance is turned on, the website will not function at all, and a message will appear on the homepage stating "Website under maintenance." A maintenance image will also be displayed. No API will work, whether for recharge, number retrieval, or history. If any API is called, the response will indicate that the website is under maintenance.
+
+Server Maintenance:
+This section will list all our servers, and we can turn any server on or off for maintenance. If a server is turned on, it will not be available for any service. If an API is called for that server, the response should indicate that the server is under maintenance.
+
+Login/Signup Maintenance:
+If login maintenance is turned on, no user will be able to log in. If signup maintenance is turned on, no user will see the signup page or be able to sign up. If both are turned on, nothing will be displayed, and the options will be removed from the menu bar.
+
+Recharge Maintenance:
+This section will have buttons to turn on maintenance for both UPI and TRX. If UPI maintenance is turned on, the UPI option will not be displayed on the recharge page. If TRX maintenance is turned on, the TRX option will not be displayed. If both are turned on, the recharge page will be removed from the menu bar. If anyone has the recharge API, it will not work if either maintenance is on, and a notification will flash indicating that UPI recharge is under maintenance.
+
+Buy Account Maintenance:
+If the ready-made accounts section is turned on for maintenance, that page and option will be removed from the menu bar.
+
+History Maintenance:
+If there are any issues, we can turn on the history maintenance button, which will remove the history page and its option from the menu bar.
+
+Contact Support/Join Channel Maintenance:
+If there are any issues, we can turn on maintenance for contact support and join channel, which will also remove those options from the menu bar.
+
+API UPDATE & Margin and Exchange Rate:
+In this section, we will update any server's API. You will need to provide a dropdown menu to select the server and fields to enter the margin and exchange rate.
+
+UPI & TRX UPDATE:
+You will also need to provide a dropdown menu to select UPI or TRX. After selecting, it should display the current API or QR code and TRX address, along with a box to enter the new QR code and TRX address. When I update any TRX address or QR code, a message should appear indicating that it has been successfully updated or uploaded.
+
+Discount/Margin:
+This section will have different types of discounts or margins. You will need to provide a dropdown menu with options for:
+- Server Discount
+- Service Discount
+- User Discount
+
+Server Discount:
+If I select server discount, a box will appear to select the server from a dropdown menu. After selecting the server, there will be a box to input how much discount to give, either plus or minus. If I enter a negative value, the current price of any service will be reduced by that amount. If I enter a positive value, it will be added to the current price. There will be save and cancel buttons.
+
+Service Discount:
+If I select service discount, a dropdown menu will appear to select the server, followed by a box listing all services with a search option. After selecting a service, there will be a box to enter the price or margin, which will be reduced if a negative value is entered or increased if a positive value is entered. There will be save and cancel buttons.
+
+User Discount:
+If I select user discount, a box will appear listing all user emails, along with a search box to select an email. After that, there will be a dropdown menu to select the server, followed by a list of services with a search box. Finally, there will be a box to enter the margin, either plus or minus, along with submit and cancel buttons.
+
+Below all these options, there will be a record of which settings have been applied, whether it is a server discount, service discount, or user discount. Each applied setting will have a delete button to remove the record. If there is a user discount record, the user's email will be displayed, allowing me to add more discounts for that user.
+
+BLOCK SYSTEM:
+In this section, you need to create a system that checks each user's account to see how much total recharge they have made, including any balance added by the admin. You will first check the total recharge amount, then check their history to see how many successful services they have taken. You will count the total price of those services and subtract it from the total recharge. If the remaining balance does not match their current wallet balance, the user will be blocked immediately. The blocked user list will include serial numbers and emails. If I click on any user's email, I will see their total recharge amount and the list of services they have taken, along with the costs.
+
+You will also need to add a profile button, so if I click on it, I can edit the user's balance and unblock them.
+
+UNSEND TRX:
+In this section, the user's serial email ID will be listed. When I click on an email, the user's TRX address and private key will be displayed, along with a delete button. This will be useful if the user has recharged via TRX and there is an error in transferring funds from their wallet to the main wallet.
+
+TELEGRAM NOTIFICATION:
+I will provide you with the direct API for Telegram, which will notify me whenever a user recharges, gets a number, receives an OTP, cancels a number, or gets blocked. Additionally, every half hour, an API call will provide details on total sales, including how much was sold from which server and the total balance.
+
+NOTE:
+If I need to add anything that I haven't thought of yet, I can inform you later without any extra charge. If it seems like a significant change or a separate addition, I will pay you separately after completing this order.
+
+After the order is complete, I need proper documentation. If any issues arise later and you are unavailable, I should be able to find another developer who can understand the code and its functionality. After completing the order, you will provide at least a 30-day guarantee. If any issues arise during the website's operation, you will fix them free of charge.
+
+You will guide me from start to finish on how the website will be hosted and run, and what will happen if the server restarts.
+
+I need the complete source code of the website without any third-party APIs.
+
+I need the website design to be responsive for both desktop and mobile, and I also need it to be SEO optimized.
+
+You will provide all the required elements and explain everything.
+
+You will handle everything from start to finish and keep me updated on the website's development and hosting.
+
+After the website is completed and goes live, if there are any bugs, glitches, or issues, you will fix them free of charge, and I need daily updates with screenshots or video recordings to stay up to date.
+
+Every night at 12, the service list and their prices will be updated.
+
+There should be space on the homepage for any bulletin-type news flashes.
+
+No page on the website should allow zooming in or out. A blank page should be displayed if a user types anything at the end of the URL and searches for it, showing a "not found" error.
+
+Website Links:
+- https://fastsms.su/
+- https://5sim.net/
+- https://smshub.org/en/main
+- https://tiger-sms.com/
+- https://grizzlysms.com/
+- https://tempnum.org/ru/login
+- https://smsbower.online/
+- https://sms-activate.io/en
+- http://ccpay.live/
+- https://sms-activation-service.com
+- https://sms-man.com/
+
+In the admin panel, there should also be an option for promotions, indicating how much bonus to give for a certain recharge amount.
